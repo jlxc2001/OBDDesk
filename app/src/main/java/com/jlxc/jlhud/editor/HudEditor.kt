@@ -1,7 +1,9 @@
 package com.jlxc.jlhud.editor
 
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -13,7 +15,7 @@ import androidx.compose.ui.unit.dp
 fun HudEditor() {
     Column(Modifier.fillMaxSize()) {
         Text(
-            text = "JLHUD Editor v0.1.1",
+            text = "JLHUD Editor v0.1.2",
             modifier = Modifier.padding(16.dp)
         )
 
