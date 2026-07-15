@@ -6,21 +6,18 @@ import androidx.activity.compose.setContent
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import com.jlxc.jlhud.JLHudApp
 
-class MainActivity: ComponentActivity(){
+class MainActivity : ComponentActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?){
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        WindowCompat.setDecorFitsSystemWindows(window,false)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
 
         WindowInsetsControllerCompat(
             window,
             window.decorView
-        ).hide(
-            WindowInsetsCompat.Type.systemBars()
-        )
+        ).hide(WindowInsetsCompat.Type.systemBars())
 
         setContent {
             JLHudApp()
