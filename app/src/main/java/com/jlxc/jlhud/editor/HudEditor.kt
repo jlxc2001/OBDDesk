@@ -13,13 +13,11 @@ import androidx.compose.ui.unit.dp
 fun HudEditor() {
     Column(Modifier.fillMaxSize()) {
         Text(
-            text = "JLHUD Editor v0.1",
+            text = "JLHUD Editor v0.1.1",
             modifier = Modifier.padding(16.dp)
         )
 
-        Canvas(
-            Modifier.fillMaxSize()
-        ) {
+        Canvas(Modifier.fillMaxSize()) {
             val scale = minOf(size.width / 1920f, size.height / 1080f)
             drawRect(
                 color = Color.Black,
