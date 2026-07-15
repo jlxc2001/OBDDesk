@@ -9,6 +9,10 @@ import com.jlxc.jlhud.editor.HudEditor
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent { MaterialTheme { HudEditor() } }
+        setContent {
+            MaterialTheme {
+                HudEditor()
+            }
+        }
     }
 }
