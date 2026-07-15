@@ -1,8 +1,8 @@
-JLHUD v1.0.0 Editor Beta
+JLHUD v1.0.1
 
-Architecture rewrite:
-- Editor / Canvas / Element separation
-- Compose native rendering
-- Dark HUD editor
-- 1920x1080 canvas
-- Element model foundation
+Added:
+- Element creation
+- Elements list
+- Text/Rectangle/Indicator buttons
+- Renderer accepts elements
+- Compose Dp fixes
