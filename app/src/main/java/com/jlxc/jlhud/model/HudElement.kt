@@ -5,7 +5,5 @@ open class HudElement(
     var x: Float,
     var y: Float,
     var width: Float,
-    var height: Float,
-    var rotation: Float = 0f,
-    var layer: Int = 0
+    var height: Float
 )
