@@ -16,5 +16,8 @@ data class HudElement(
     var width: Float,
     var height: Float,
     var text: String = "",
-    var color: Color = Color.Cyan
+    var color: Color = Color.Cyan,
+    var visible: Boolean = true,
+    var locked: Boolean = false,
+    var layer: Int = 0
 )

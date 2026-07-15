@@ -1,9 +1,9 @@
-JLHUD v0.2.0
-
-HUD Editor prototype.
+JLHUD v0.3.0 Editor Beta
 
 Features:
-- Dark editor interface
+- Immersive dark editor
 - 1920x1080 canvas
-- Add text element prototype
-- Element data model
+- Element system
+- Add Text / Rectangle / Indicator
+- Select and drag elements
+- Preview mode foundation
