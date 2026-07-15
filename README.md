@@ -1,6 +1,8 @@
-JLHUD v0.4.2
+JLHUD v1.0.0 Editor Beta
 
-Fix:
-- Replace Android nativeCanvas rendering
-- Use Compose Text rendering
-- Prepare renderer separation
+Architecture rewrite:
+- Editor / Canvas / Element separation
+- Compose native rendering
+- Dark HUD editor
+- 1920x1080 canvas
+- Element model foundation
