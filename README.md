@@ -1,9 +1,8 @@
-JLHUD v0.3.0 Editor Beta
+JLHUD v0.4.0
 
-Features:
-- Immersive dark editor
-- 1920x1080 canvas
-- Element system
-- Add Text / Rectangle / Indicator
-- Select and drag elements
-- Preview mode foundation
+Editor core update:
+- immersive fullscreen
+- toolbar redesign
+- real text rendering
+- element selection framework
+- drag preparation

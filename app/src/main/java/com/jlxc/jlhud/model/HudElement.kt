@@ -9,15 +9,13 @@ enum class ElementType {
 }
 
 data class HudElement(
-    val id: String,
-    val type: ElementType,
-    var x: Float,
-    var y: Float,
-    var width: Float,
-    var height: Float,
-    var text: String = "",
-    var color: Color = Color.Cyan,
-    var visible: Boolean = true,
-    var locked: Boolean = false,
-    var layer: Int = 0
+    val id:String,
+    val type:ElementType,
+    var x:Float,
+    var y:Float,
+    var width:Float,
+    var height:Float,
+    var text:String = "",
+    var color:Color = Color.Cyan,
+    var selected:Boolean = false
 )

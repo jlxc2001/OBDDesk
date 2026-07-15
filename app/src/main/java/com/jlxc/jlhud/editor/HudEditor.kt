@@ -10,87 +10,99 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.jlxc.jlhud.model.ElementType
+import com.jlxc.jlhud.model.*
 
 @Composable
 fun HudEditor() {
-    val state = remember { HudState() }
+
+    val elements = remember {
+        mutableStateListOf<HudElement>()
+    }
 
     Column(
         Modifier
             .fillMaxSize()
             .background(Color(0xFF101010))
     ) {
+
         Row(
             Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
+
             Text(
-                "JLHUD Editor v0.3",
+                "JLHUD Editor v0.4",
                 color = Color.White,
                 modifier = Modifier.padding(16.dp)
             )
 
-            Row {
-                Button(onClick = { state.addText() }) {
-                    Text("Text")
+            Button(
+                onClick = {
+                    elements.add(
+                        HudElement(
+                            id="text_${elements.size}",
+                            type=ElementType.TEXT,
+                            x=960f,
+                            y=540f,
+                            width=300f,
+                            height=100f,
+                            text="SPEED"
+                        )
+                    )
                 }
-                Button(onClick = { state.addRectangle() }) {
-                    Text("Rect")
-                }
-                Button(onClick = { state.addIndicator() }) {
-                    Text("LED")
-                }
+            ) {
+                Text("+")
             }
         }
 
         Canvas(
-            Modifier
-                .fillMaxSize()
-                .padding(20.dp)
+            Modifier.fillMaxSize()
         ) {
-            val scale = minOf(
-                size.width / 1920f,
-                size.height / 1080f
+
+            val scale=minOf(
+                size.width/1920f,
+                size.height/1080f
             )
 
-            val w = 1920f * scale
-            val h = 1080f * scale
+            val w=1920f*scale
+            val h=1080f*scale
 
-            val left = (size.width - w) / 2
-            val top = (size.height - h) / 2
+            val left=(size.width-w)/2
+            val top=(size.height-h)/2
 
             drawRect(
                 Color.Black,
-                Offset(left, top),
-                Size(w, h)
+                Offset(left,top),
+                Size(w,h)
             )
 
-            state.elements.forEach { e ->
-                val x = left + e.x * scale
-                val y = top + e.y * scale
+            elements.forEach { e ->
 
-                when(e.type) {
-                    ElementType.RECTANGLE ->
-                        drawRect(
-                            Color(0x5539C5BB),
-                            Offset(x, y),
-                            Size(e.width * scale, e.height * scale)
-                        )
+                if(e.type==ElementType.TEXT){
+                    drawContext.canvas.nativeCanvas.drawText(
+                        e.text,
+                        left+e.x*scale,
+                        top+e.y*scale,
+                        android.graphics.Paint().apply {
+                            color=android.graphics.Color.CYAN
+                            textSize=80f*scale
+                        }
+                    )
+                }
 
-                    ElementType.INDICATOR ->
-                        drawCircle(
-                            Color.Green,
-                            radius = e.width * scale / 2,
-                            center = Offset(x, y)
-                        )
-
-                    ElementType.TEXT ->
-                        drawCircle(
-                            Color.Cyan,
-                            radius = 5f,
-                            center = Offset(x, y)
-                        )
+                if(e.selected){
+                    drawRect(
+                        Color.Cyan,
+                        Offset(
+                            left+e.x*scale-5,
+                            top+e.y*scale-5
+                        ),
+                        Size(
+                            e.width*scale,
+                            e.height*scale
+                        ),
+                        style=androidx.compose.ui.graphics.drawscope.Stroke(3f)
+                    )
                 }
             }
         }
