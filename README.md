@@ -1,8 +1,6 @@
-JLHUD v0.4.0
+JLHUD v0.4.2
 
-Editor core update:
-- immersive fullscreen
-- toolbar redesign
-- real text rendering
-- element selection framework
-- drag preparation
+Fix:
+- Replace Android nativeCanvas rendering
+- Use Compose Text rendering
+- Prepare renderer separation
