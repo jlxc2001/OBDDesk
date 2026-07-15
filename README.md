@@ -1,8 +1,10 @@
-JLHUD v1.0.1
+JLHUD MVP v1.0
+A functional HUD editor prototype.
 
-Added:
-- Element creation
-- Elements list
-- Text/Rectangle/Indicator buttons
-- Renderer accepts elements
-- Compose Dp fixes
+Features:
+- immersive fullscreen
+- 1920x1080 HUD canvas
+- add text/rectangle/indicator
+- select element
+- drag element
+- edit properties
